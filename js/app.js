@@ -140,16 +140,20 @@ for (var i = 4; i > 0; i--) {
       numCorrect++;
       break;
     } else if (guessNumber > correctNumber) {
+      console.log('Too high');
       alert('It\'s a GOOD guess, the guess is TOO HIGH.  Try again, you have ' + (i - 1) + ' guess(es) remaining.');
     } else if (guessNumber < correctNumber) {
+      console.log('Too LOW');
       alert('It\'s a GOOD guess, the guess is TOO LOW.  Try again, you have ' + (i - 1) + ' guess(es) remaining.');
     }
   }
   else {
     alert('Whoops!  That\'s not a number silly.  You have ' + (i - 1) + ' guess(es) remaining');
+    console.log('User input not a number');
   }
   if (i === 1) {
     alert('Aww.  You are all out of chances, the answer was ' + correctNumber + '.');
+    console.log('Out of guesses. Not a correct answer');
   }
 }
 // 7 Multiple Guesses.
@@ -165,11 +169,13 @@ for (var q = 6; q > 0; q--) {
   for (var j = 0; j < myFavs.length; j++) {
     if (userAns === myFavs[j]) {
       alert('You\'re Right! ' + userAns + ' IS one of my all time favs!');
+      console.log('Correct Array item guessed: ' + myFavs[j]);
       numCorrect++;
       isCorrect = true;
       break;
     }
     else {
+      console.log('User entry not found in myFav Array');
       isCorrect = false;
     }
   }
@@ -177,6 +183,7 @@ for (var q = 6; q > 0; q--) {
     break;
   } else {
     alert('Awww, nope.  I\'m sure ' + userAns + ' is a good game, but not one of my favorites.  You have ' + (q - 1) + ' guesses remaining.');
+    console.log('Incorrect Game Guess');
   }
 }
 alert('Well played ' + userName + '.  The possible answers were ' + myFavs + '.  If you haven\'t you should grab a Super Nintendo and try them out!');
