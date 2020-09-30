@@ -1,0 +1,39 @@
+* {
+  background-color: #161616;
+  font-family: 'Press Start 2P', cursive;
+  color: #019927;
+  
+
+}
+h1 {
+  font-size: 32px;
+  
+}
+
+h2 {font-size: 24px
+}
+p{
+  color: #d1cfcf;
+  font-size: 12px;
+  /* max-width: 600px; */
+  letter-spacing: .5pt;
+  line-height: 12pt;
+  
+}
+img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hgroup {
+  text-align: center;
+  border: 2px solid;
+  padding:2px;
+}
+.column{
+  float:left;
+  width: 45%;
+  padding: 5px;
+  border: 1px solid #019927;
+}
