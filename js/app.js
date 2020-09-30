@@ -7,8 +7,8 @@ var jobTitleQ;
 var favGameFranchQ;
 var favMovieQ;
 var userName = prompt('Hello, Hello!  What is your name?');
-alert('Well hello, ' + userName + '!  Welcome.  I am going to ask 5 questions about me, and see how you do!');
-alert('Please answer each question with either a "Yes/No" or "Y/N"');
+alert('Well hello, ' + userName + '!  Welcome.  I am going to ask 7 questions about me, and see how you do!');
+alert('Please answer the first 5 with either a "Yes/No" or "Y/N"');
 userName.toUpperCase();
 //console.log(userName);
 // Questions to be answered
@@ -26,7 +26,7 @@ do {
     //console.log('CORRECT');
     alert('That is Correct!');
     isFormatCorrect = true;
-    numCorrect += 1;
+    numCorrect++;
   }
   else {
     //console.log('INVALID INPUT: ' + fullNameQ);
@@ -44,7 +44,7 @@ do {
     //console.log('CORRECT');
     alert('That is Correct!');
     isFormatCorrect = true;
-    numCorrect += 1;
+    numCorrect++;
   }
   else if (myCarQ === 'NO' || myCarQ === 'N') {
     //console.log('INCORRECT');
@@ -72,7 +72,7 @@ do {
     //console.log('CORRECT');
     alert('That is Correct!');
     isFormatCorrect = true;
-    numCorrect += 1;
+    numCorrect++;
   }
   else {
     //console.log('INVALID INPUT: ' + jobTitleQ);
@@ -90,7 +90,7 @@ do {
     //console.log('CORRECT');
     alert('That is Correct!');
     isFormatCorrect = true;
-    numCorrect += 1;
+    numCorrect++;
   }
   else if (favGameFranchQ === 'NO' || favGameFranchQ === 'N') {
     //console.log('INCORRECT');
@@ -117,7 +117,7 @@ do {
   else if (favMovieQ === 'NO' || favMovieQ === 'N') {
     alert('That is Correct!');
     isFormatCorrect = true;
-    numCorrect += 1;
+    numCorrect++;
   }
   else {
     //console.log('INVALID INPUT: ' + favMovieQ);
@@ -137,6 +137,7 @@ for (var i = 4; i > 0; i--) {
     console.log(guessNumber);
     if (guessNumber === correctNumber) {
       alert('You\'re Right!  It was ' + guessNumber + '!  Good job!');
+      numCorrect++;
       break;
     } else if (guessNumber > correctNumber) {
       alert('It\'s a GOOD guess, the guess is TOO HIGH.  Try again, you have ' + (i - 1) + ' guess(es) remaining.');
@@ -151,7 +152,39 @@ for (var i = 4; i > 0; i--) {
     alert('Aww.  You are all out of chances, the answer was ' + correctNumber + '.');
   }
 }
-// 7 Next Shennanigans.
+// 7 Multiple Guesses.
 
-alert(userName + ', thank you for taking the time to get to know me a little.  You scored ' + numCorrect + ' out of 7!  Take Care now.');
-//console.log(numCorrect);
+var myFavs = ['STARFOX', 'SUPER METROID', 'MEGA MAN X'];
+var userAns;
+var isCorrect = false;
+
+
+for (var q = 6; q > 0; q--) {
+  userAns = prompt('What is one of my favorite games?').toUpperCase();
+
+  for (var j = 0; j < myFavs.length; j++) {
+    if (userAns === myFavs[j]) {
+      alert('You\'re Right! ' + userAns + ' IS one of my all time favs!');
+      numCorrect++;
+      isCorrect = true;
+      break;
+    }
+    else {
+      isCorrect = false;
+    }
+  }
+  if (isCorrect === true) {
+    break;
+  } else {
+    alert('Awww, nope.  I\'m sure ' + userAns + ' is a good game, but not one of my favorites.  You have ' + (q - 1) + ' guesses remaining.');
+  }
+}
+alert('Well played ' + userName + '.  The possible answers were ' + myFavs + '.  If you haven\'t you should grab a Super Nintendo and try them out!');
+
+
+//Closing
+if (numCorrect > 5) {
+  alert(userName + ', thank you for taking the time to get to know me a little.  You scored ' + numCorrect + ' out of 7!  Very Cool, can\' wait to get to know you!  Take Care now.');
+} else {
+  alert(userName + ', thank you for taking the time, but you only scored ' + numCorrect + ' out of 7!  Could be better, but it\'s all good.  Take Care now.');
+}
