@@ -126,5 +126,32 @@ do {
   }
 } while (isFormatCorrect === false);
 
-alert(userName + ', thank you for taking the time to get to know me a little.  You scored ' + numCorrect + ' out of 5!  Take Care now.');
+// 6 Guessing Game
+var correctNumber = 7;
+var guessNumber;
+alert('We are going to play a game of number guessing, I am thinking of a number from 1 to 10.  You have 4 tries.  Good Luck! :)');
+for (var i = 4; i > 0; i--) {
+  console.log(i);
+  guessNumber = parseInt(prompt('Pick an number between 1 and 10'), 10);
+  if (guessNumber) {
+    console.log(guessNumber);
+    if (guessNumber === correctNumber) {
+      alert('You\'re Right!  It was ' + guessNumber + '!  Good job!');
+      break;
+    } else if (guessNumber > correctNumber) {
+      alert('It\'s a GOOD guess, the guess is TOO HIGH.  Try again, you have ' + (i - 1) + ' guess(es) remaining.');
+    } else if (guessNumber < correctNumber) {
+      alert('It\'s a GOOD guess, the guess is TOO LOW.  Try again, you have ' + (i - 1) + ' guess(es) remaining.');
+    }
+  }
+  else {
+    alert('Whoops!  That\'s not a number silly.  You have ' + (i - 1) + ' guess(es) remaining');
+  }
+  if (i === 1) {
+    alert('Aww.  You are all out of chances, the answer was ' + correctNumber + '.');
+  }
+}
+// 7 Next Shennanigans.
+
+alert(userName + ', thank you for taking the time to get to know me a little.  You scored ' + numCorrect + ' out of 7!  Take Care now.');
 //console.log(numCorrect);
