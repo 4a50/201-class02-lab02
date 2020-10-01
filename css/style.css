@@ -1,10 +1,9 @@
+
+/* High Level Formatting */
 * {
   background-color: #161616;
   font-family: 'Press Start 2P', cursive;
-  position: static;
-  /* color: #019927; */
-  
-
+  position: static;  
 }
 h1 {
   font-size: 32px;
@@ -14,7 +13,14 @@ h2 {font-size: 24px;
 }
 
 h3{
+  font-size: 20px;
   color: #ffffff;
+ 
+}
+li {
+  font-size: 16px;
+  color: rgb(202, 202, 202);
+  list-style-position: inside;
 }
 hgroup {
   text-align: center;
@@ -22,36 +28,45 @@ hgroup {
   padding:2px;
   color: #019927;
 }
+
+/* Sections */
+#picture-frame{
+  float:left;
+  border: 1px solid #019927;    
+  /* padding-bottom: 160px; */
+  margin: auto;
+  padding-bottom: 86px;
+  /* background-color: #4e4e4e; */
+  background-image: url("/img/static.png");
+  
+  
+}
 #about-me {  
   color: rgb(202, 202, 202); 
   font-size: 12px;  
   letter-spacing: .5pt;
   line-height: 12pt;
-  border: 1px solid #019927;  
-  
-  
- 
+  border: 1px solid #019927;
 }
-
-#pic{
-  border: 1px solid #019927;  
-  float: left; 
-  padding-bottom: 160px;
+#lists{
+  border: 1px solid yellow; 
   margin: auto;
-
-  
-}
-
-ul, ol {
-  /* display: inline; */
-  /* margin-left: 5px; */
+  float: left;
+  width: 900px;
   padding: 10px;
+ }
+
+/* Components */
+#picture-frame img{  
+ 
+  margin-top: 70px;  
 }
-
-
-ul, ol li{
-  color: rgb(202, 202, 202);
-  list-style-position: inside;
+#picture-frame img{
+  transform: scale(.75);
+  opacity: .8;
   
-      
 }
+/* #top-10{
+}
+#jobs li{  
+} */
