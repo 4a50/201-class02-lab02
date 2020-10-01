@@ -1,10 +1,6 @@
 'use strict';
 var numCorrect = 0;
 var isFormatCorrect;
-var fullNameQ;
-var myCarQ;
-var jobTitleQ;
-var favGameFranchQ;
 var favMovieQ;
 var userName = prompt('Hello, Hello!  What is your name?');
 alert('Well hello, ' + userName + '!  Welcome.  I am going to ask 7 questions about me, and see how you do!');
@@ -13,8 +9,9 @@ userName.toUpperCase();
 //console.log(userName);
 // Questions to be answered
 // 1 Full Name Question
+function inputName (){
 do {
-  fullNameQ = prompt('Is my full name Justin Paul Jones?').toUpperCase();
+  var fullNameQ = prompt('Is my full name Justin Paul Jones?').toUpperCase();
   //console.log('User Answer to NAME question: ' + fullNameQ);
 
   if (fullNameQ === 'YES' || fullNameQ === 'Y') {
@@ -34,11 +31,11 @@ do {
     isFormatCorrect = false;
   }
 } while (isFormatCorrect === false);
-
+}
 // 2 Car I want Question
-
+function favCar (){
 do {
-  myCarQ = prompt('Would I like to own a Tesla one day?').toUpperCase();
+  var myCarQ = prompt('Would I like to own a Tesla one day?').toUpperCase();
   //console.log('User Answer to CAR question: ' + myCarQ);
   if (myCarQ === 'YES' || myCarQ === 'Y') {
     //console.log('CORRECT');
@@ -57,11 +54,11 @@ do {
     isFormatCorrect = false;
   }
 } while (isFormatCorrect === false);
-
+}
 // 3 Job Title Question
-
+function jobTitle(){
 do {
-  jobTitleQ = prompt('Was my old job title Awesome Navigator?').toUpperCase();
+  var jobTitleQ = prompt('Was my old job title Awesome Navigator?').toUpperCase();
   //console.log('User Answer to JOB TITLE question: ' + jobTitleQ);
   if (jobTitleQ === 'YES' || jobTitleQ === 'Y') {
     //console.log('INCORRECT');
@@ -80,11 +77,11 @@ do {
     isFormatCorrect = false;
   }
 } while (isFormatCorrect === false);
-
+}
 // 4 Favorite Game Franchise
-
+function favGame(){
 do {
-  favGameFranchQ = prompt('Is Starfox my favorite game franchise?').toUpperCase();
+  var favGameFranchQ = prompt('Is Starfox my favorite game franchise?').toUpperCase();
   //console.log('User Answer to FAV GAME FRANCHISE question: ' + favGameFranchQ);
   if (favGameFranchQ === 'YES' || favGameFranchQ === 'Y') {
     //console.log('CORRECT');
@@ -103,15 +100,15 @@ do {
     isFormatCorrect = false;
   }
 } while (isFormatCorrect === false);
-
+}
 // 5 Favorite Movie
-
+function favMovie(){
 do {
   favMovieQ = prompt('Is GhostSmashers my all-time favorite?').toUpperCase();
   //console.log('User Answer to FAV GAME FRANCHISE question: ' + favMovieQ);
   if (favMovieQ === 'YES' || favMovieQ === 'Y') {
     //console.log('INCORRECT');
-    alert('Fun fact, GhostSmasher was a working title for Ghostbusters, which IS my favorite movie!');
+    alert('Fun fact, GhostSmashers was a working title for Ghostbusters, which IS my favorite movie!');
     isFormatCorrect = true;
   }
   else if (favMovieQ === 'NO' || favMovieQ === 'N') {
@@ -125,8 +122,9 @@ do {
     isFormatCorrect = false;
   }
 } while (isFormatCorrect === false);
-
+}
 // 6 Guessing Game
+function guessGame(){
 var correctNumber = 7;
 var guessNumber;
 alert('We are going to play a game of number guessing, I am thinking of a number from 1 to 10.  You have 4 tries.  Good Luck! :)');
@@ -156,8 +154,9 @@ for (var i = 4; i > 0; i--) {
     console.log('Out of guesses. Not a correct answer');
   }
 }
+}
 // 7 Multiple Guesses.
-
+function favOldGame(){
 var myFavs = ['STARFOX', 'SUPER METROID', 'MEGA MAN X'];
 var userAns;
 var isCorrect = false;
@@ -187,11 +186,21 @@ for (var q = 6; q > 0; q--) {
   }
 }
 alert('Well played ' + userName + '.  The possible answers were ' + myFavs + '.  If you haven\'t you should grab a Super Nintendo and try them out!');
-
+}
 
 //Closing
+function closing(){
 if (numCorrect > 5) {
   alert(userName + ', thank you for taking the time to get to know me a little.  You scored ' + numCorrect + ' out of 7!  Very Cool, can\' wait to get to know you!  Take Care now.');
 } else {
   alert(userName + ', thank you for taking the time, but you only scored ' + numCorrect + ' out of 7!  Could be better, but it\'s all good.  Take Care now.');
 }
+}
+inputName ();
+favCar ();
+jobTitle ();
+favGame();
+favMovie();
+guessGame();
+favOldGame();
+closing();
